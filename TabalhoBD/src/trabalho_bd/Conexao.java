@@ -17,9 +17,9 @@ public class Conexao {
 
         String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
-        String username = "root";        //nome de um usuário de seu BD
+        String username = "root";        //nome de um usuï¿½rio de seu BD
 
-        String password = "sandy";      //sua senha de acesso
+        String p = "sandy";      //sua senha de acesso
 
         Connection connection = DriverManager.getConnection(url, username, password);
 
@@ -30,17 +30,17 @@ public class Conexao {
         PreparedStatement ps = connection.prepareStatement(sql);
 
         //Executa o comando de consulta aonde guarda os dados retornados dentro do ResultSet.
-//Pelo fato de gerar uma lista de valores, é necessário percorrer os dados através do laço while
+//Pelo fato de gerar uma lista de valores, ï¿½ necessï¿½rio percorrer os dados atravï¿½s do laï¿½o while
         ResultSet rs = ps.executeQuery();
-//Faz a verificação de enquanto conter registros, percorre e resgata os valores
+//Faz a verificaï¿½ï¿½o de enquanto conter registros, percorre e resgata os valores
         while(rs.next()){
             //Recupera valor referente ao nome da coluna
             int nome = rs.getInt("NOME");
-            //Recupera o índice do campo referente ao campo nome
+            //Recupera o ï¿½ndice do campo referente ao campo nome
             String representante = rs.getString("representante");
             int tel_contato = rs.getInt("TEL_CONTATO");
 
-            System.out.printf("Código %d: %s - %d | Salário: \n", nome, representante,tel_contato);
+            System.out.printf("Cï¿½digo %d: %s - %d | Salï¿½rio: \n", nome, representante,tel_contato);
         }
     }
 }
